@@ -319,6 +319,7 @@ export PATH=$PATH:$HOME/.cargo/binexport
 # maestro
 export PATH="$PATH":"$HOME/.maestro/bin"
 
+source $HOME/.github_packages
 
 [[ -s "/Users/rgomes/.gvm/scripts/gvm" ]] && source "/Users/rgomes/.gvm/scripts/gvm"
 
