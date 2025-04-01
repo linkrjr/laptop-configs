@@ -1,0 +1,43 @@
+[includeIf "gitdir:~/Projects/"]
+  path = ~/Projects/.gitconfig
+
+[includeIf "gitdir:~/Tyro/"]
+  path = ~/Tyro/.gitconfig  
+
+[core]
+	excludesfile = /Users/rgomes/.gitignore
+	compression = 0
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[push]
+	autoSetupRemote = true
+[pull]
+	rebase = false
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[commit]
+	template = /Users/rgomes/.stCommitMsg
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[gpg]
+	format = openpgp
+[http]
+	postBuffer = 52428800
+[alias]
+	start = !git init && git commit --allow-empty -m \"Initial commit\"
+	initthis = !git init && git add . && git commit -m \"Bootstrap commit\"	
+	deploy = !git rev-parse --abbrev-ref HEAD | gh pr comment $1  -b "/deploy"
+	watch = !gh run watch
+	empty = !git commit --allow-empty --no-verify -m \"Empty commit\"
+	cleanb = !git checkout master && git branch | grep -v \"\\*\" | xargs git branch -D
+	pnv = !git push --no-verify -f
+	canv = !git commit --amend --no-edit --no-verify

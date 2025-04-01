@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "create-react-native-module": "^0.20.2"
+  }
+}
