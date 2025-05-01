@@ -1,9 +1,5 @@
 git/credentials
-<<<<<<< HEAD
-zed/.tmp*
-=======
 zed/.tmp*
 zed/prompts
 github-copilot/apps.json
 github-copilot/ws/**/*
->>>>>>> 414430e (removing some copilot configs)
