@@ -3,3 +3,4 @@ zed/.tmp*
 zed/prompts
 github-copilot/apps.json
 github-copilot/ws/**/*
+gh/hosts.yml
