@@ -37,9 +37,10 @@ plugins=(
   github
   gitfast
   helm
-  history  
+  history
   httpie
   jump
+  jj
   k9s
   # fastlane
   kubectl
@@ -57,9 +58,9 @@ plugins=(
   thefuck
   rbenv
   ruby
-  vagrant  
+  vagrant
   vscode
-  z 
+  z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -96,6 +97,12 @@ _fzf_compgen_path_dir() {
 
 # Lazygit
 alias lg='lazygit'
+
+# Lazydocker
+alias ldck="lazydocker"
+
+# Lazyjj
+alias ljj="lazyjj"
 
 # User configuration
 
@@ -191,7 +198,7 @@ alias kctx="kubectx"
 alias k="kubectl"
 alias kl="kubectl logs"
 export do="-o yaml --dry-run='client'" # k create deploy nginx --image=nginx $do
-export labels="--show-labels=true"    
+export labels="--show-labels=true"
 export now="--force --grace-period 0" # k delete pod x $now
 export nh='--no-headers'
 alias kw='watch kubectl '
@@ -205,7 +212,7 @@ function kjump() {
 export PATH="$HOME/bin:$PATH"
 
 export ns=defau
-# alias k='kubectl -n $ns' # This helps when namespace in question doesn't have a friendly name 
+# alias k='kubectl -n $ns' # This helps when namespace in question doesn't have a friendly name
 # alias kdr='kubectl -n $ns -o yaml --dry-run '.  # run commands in dry run mode and generate yaml.
 
 # Podman
@@ -316,12 +323,10 @@ export PATH=$PATH:$HOME/Library/Android/sdk/cmdline-tools/10.0/bin
 
 # Rust
 export PQ_LIB_DIR="$(brew --prefix libpq)/lib"
-export PATH=$PATH:$HOME/.cargo/binexport 
+export PATH=$PATH:$HOME/.cargo/binexport
 
 # maestro
 export PATH="$PATH":"$HOME/.maestro/bin"
-
-source $HOME/.github_packages
 
 [[ -s "/Users/rgomes/.gvm/scripts/gvm" ]] && source "/Users/rgomes/.gvm/scripts/gvm"
 
@@ -344,3 +349,7 @@ export BAT_THEME="Dracula"
 
 # Atuin
 eval "$(atuin init zsh)"
+
+# Tyro specific settings
+export TYRO_HOME=$HOME/Tyro
+[ -f "$TYRO_HOME/tyro.sh" ] && source "$TYRO_HOME/tyro.sh"
