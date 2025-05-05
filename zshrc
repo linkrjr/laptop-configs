@@ -33,6 +33,7 @@ plugins=(
   fzf
   fnm
   flutter
+  gh
   git
   github
   gitfast
